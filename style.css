@@ -1,0 +1,105 @@
+
+:root{
+    --main-color:#3d0075;
+    --form-color:#e7e6e8;
+    
+
+}
+
+label{
+    font-weight: bold;
+    font-size: small;
+    color: var(--main-color);
+}
+
+input{
+    margin-bottom: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+input:focus-visible{
+    outline: none;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+
+
+body{
+    background:linear-gradient(to top, rgba(49,135,216,1), rgba(71,3,140,1)) no-repeat !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2{
+    color: var(--main-color);
+    background-color: white;
+    border-radius: 10px;
+
+}
+
+
+/* form{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+} */
+
+li{
+    margin-bottom: 10px;
+}
+
+.BoxForm{
+    width: 300px;
+    min-height: 500px;
+    background-color:var(--form-color) ;
+    border-radius: 20px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 10px 5px 4px black;
+
+}
+
+#titulo{
+    padding-left: 80px;
+    padding-right: 80px;
+    background-repeat: no-repeat;
+    background-size: 300px 140px;
+    background-color: white;
+
+}
+
+button{
+    background-color: var(--main-color) !important; 
+    color: var(--form-color);
+    font-weight: bold;
+    padding: 10px;
+    width: 100%;
+    border-radius: 20px;
+    border: none !important;
+}
+
+button:hover{
+    transition: 0.3s ease-in-out;
+    box-shadow: var(--main-color) 0px 0px 28px 0px;
+}
+
