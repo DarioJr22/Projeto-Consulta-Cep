@@ -20,9 +20,6 @@ input:focus-visible {
   outline: none;
 }
 
-input[type="number"] {
-  -moz-appearance: textfield;
-}
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -45,6 +42,7 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 h2 {
@@ -76,11 +74,31 @@ li {
   justify-content: center;
   align-items: center;
   box-shadow: 10px 5px 4px black;
+ 
 }
+
+.BoxForm2 {
+ 
+  width: 300px;
+  min-height: 500px;
+  background-color: var(--form-color);
+  border-radius: 20px;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 10px 5px 4px black;
+  transform: translateX(120vw);
+ 
+}
+
+
 
 .divgetList {
   display: flex;
-  align-content: flex-end !important;
 }
 
 .pageGetList {
@@ -111,3 +129,61 @@ button:hover {
   transition: 0.3s ease-in-out;
   box-shadow: var(--main-color) 0px 0px 28px 0px;
 }
+
+.buttonGetList{
+ width: 1.2rem !important;
+ border-radius: 1rem !important;
+ margin: 2rem !important;
+
+}
+
+
+
+/* Animations */
+
+.BoxForm.BoxFormExit {
+  animation-name:exitToLeft ;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.buttonGetList.buttonGetListExit{
+  animation-name:exitToLeft ;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+ }
+
+
+
+ .BoxForm2.BoxFormEnter{
+  animation-name: enterToLeft;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+ }
+
+
+@keyframes exitToLeft{
+  100%{
+    transform: translateX(-120vw);
+    opacity: 0.1;
+  }
+}
+
+
+@keyframes enterToLeft{
+  0%{
+    transform: translateX(120vw);
+  }
+
+  100%{
+    transform: translateX(0);
+  }
+}
+
+
+
+
+

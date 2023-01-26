@@ -60,7 +60,7 @@ getData = function (CEP) {
     .then((data) => {
       debugger
       console.log(data);
-      if (data.erro == 'true') {
+      if (data.erro) {
         _this.clearInputs();
         window.alert("CEP inválido");
       } else {
@@ -68,6 +68,27 @@ getData = function (CEP) {
         document.getElementById("Complemento").value = data.complemento == "" ? "Sem Complemento" : data.complemento;
         document.getElementById("Bairro").value = data.bairro;
         document.getElementById("Cidade").value = data.localidade;
+        document.getElementById("Uf").value = data.uf;
       }
     });
 };
+
+//Modificar classe 
+
+exitElement = function(){
+  let form = document.getElementById("BoxForm1")
+  let iconRigth = document.getElementById("iconRight")
+
+  form.className = "BoxForm BoxFormExit"
+  iconRigth.className = "buttonGetList buttonGetListExit"
+
+  
+}
+
+enterElement = function(){
+  let form2 = document.getElementById('BoxForm2')
+  form2.hidden = false
+  form2.className = "BoxForm2 BoxFormEnter"
+}
+
+

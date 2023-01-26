@@ -19,12 +19,12 @@
     - Saída de padrão apontado no hegex do html-->
 
     <div class="pageWrapper">
-      <div class="BoxForm p-3">
+      <div id='BoxForm1'class="BoxForm  p-3">
         <div>
           <h2>Busca CEP</h2>
         </div>
 
-        <form name="buscaCep" class="needs-validation" novalidate>
+        <form name="buscaCep" class="needs-validation" autocomplete="off" novalidate>
           <div class="mb-3">
             <label for="validationCEP" class="form-label">CEP</label>
             <br />
@@ -38,6 +38,7 @@
               placeholder="Digite o CEP"
               required
               onkeyup="validateCep()"
+              on
             />
             <div class="valid-feedback">CEP Encontrado !</div>
 
@@ -88,6 +89,19 @@
             />
           </div>
 
+          <div class="mb-3">
+            <label class="form-label">UF</label>
+            <br />
+            <input
+              class="form-control"
+              id="Uf"
+              type="text"
+              placeholder="Estado"
+            />
+          </div>
+
+
+
           <!--  <button class="btn btn-primary" type="button" onclick="getData()">
             Buscar
           </button> -->
@@ -95,8 +109,28 @@
       </div>
     </div>
 
-    <div class="divgetList">
-      <button class="pageGetList" onclick=""></button>
+    <div id="iconRight" class="buttonGetList position-relative">
+
+      <a class="position-absolute top-0 start-0" onclick="exitElement();enterElement()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+          <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+        </svg>
+      </a>
+
     </div>
+
+
+      <div hidden="true" id='BoxForm2'class="BoxForm2">
+        <div>
+          <h2>Busca CEP</h2>
+        </div>
+
+      </div>
+ 
+    
+
+    
+    
+  </div>
   </body>
 </html>
