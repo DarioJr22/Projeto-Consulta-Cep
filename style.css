@@ -29,6 +29,7 @@ input::-webkit-inner-spin-button {
 }
 
 body {
+  z-index: -1;
   background: linear-gradient(
       to top,
       rgba(49, 135, 216, 1),
@@ -40,15 +41,17 @@ body {
   justify-content: center;
   justify-items: center;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  width: 100vw;
-  height: 100vh;
   overflow: hidden;
+  height: 100vh;
+  width: 100vw;
 }
 
 h2 {
   color: var(--main-color);
-  background-color: white;
+  background-color:linear-gradient( to top,rgba(49, 135, 216, 1),rgba(71, 3, 140, 1)) !important;
   border-radius: 10px;
+  padding: 10px;
+
 }
 
 /* form{
@@ -59,9 +62,21 @@ h2 {
 
 li {
   margin-bottom: 10px;
+
+}
+
+
+table{
+  margin-top: 20px;
+}
+
+td{
+  padding: 0rem;
+  width: 3px !important;
 }
 
 .BoxForm {
+  visibility:visible;
   width: 300px;
   min-height: 500px;
   background-color: var(--form-color);
@@ -74,29 +89,34 @@ li {
   justify-content: center;
   align-items: center;
   box-shadow: 10px 5px 4px black;
+  padding: 1rem;
  
 }
 
 .BoxForm2 {
  
-  width: 300px;
-  min-height: 500px;
+  width: 700px;
+  height: 500px;
   background-color: var(--form-color);
   border-radius: 20px;
   border: none;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  align-items: center;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: start;
   box-shadow: 10px 5px 4px black;
   transform: translateX(120vw);
+  overflow: auto;
+  padding: 1rem;
  
 }
 
-
-
+.row{
+  margin-top: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
 .divgetList {
   display: flex;
 }
@@ -121,7 +141,7 @@ button {
   font-weight: bold;
   padding: 10px;
   width: 100%;
-  border-radius: 20px;
+  border-radius: 20px !important;
   border: none !important;
 }
 
@@ -137,10 +157,20 @@ button:hover {
 
 }
 
+.buttonGetForm{
+  width: 1.2rem !important;
+  border-radius: 1rem !important;
+  margin: 2rem !important;
+  transform: translateX(120vw);
+ 
+}
+
 
 
 /* Animations */
 
+
+/* Exit Elements */
 .BoxForm.BoxFormExit {
   animation-name:exitToLeft ;
   animation-duration: 500ms;
@@ -155,7 +185,7 @@ button:hover {
   animation-fill-mode: forwards;
  }
 
-
+ /* Enter Elements */
 
  .BoxForm2.BoxFormEnter{
   animation-name: enterToLeft;
@@ -164,11 +194,67 @@ button:hover {
   animation-fill-mode: forwards;
  }
 
+ .buttonGetForm.buttonGetFormEnter {
+  animation-name:enterToLeft ;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+ 
+}
+
+/* ------------------- */
+
+
+/* Back Exit Elements */
+
+.BoxForm.BoxFormExit.BackBoxFormExit {
+  animation-name:Back_exitToLeft ;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.buttonGetList.buttonGetListExit.BackBoxFormExit {
+  animation-name:Back_exitToLeft ;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+ }
+
+ /* Back Enter Elements */
+
+ .BoxForm2.BoxFormEnter.BackBoxFormEnter{
+  animation-name: Back_enterToLeft;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+ }
+
+ .buttonGetForm.buttonGetFormEnter.BackbuttonGetForm2 {
+  animation-name:Back_enterToLeft ;
+  animation-duration: 500ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+ 
+}
+
 
 @keyframes exitToLeft{
+
   100%{
     transform: translateX(-120vw);
     opacity: 0.1;
+  }
+}
+
+@keyframes Back_exitToLeft{
+  0%{
+    transform: translateX(-120vw);
+  }
+
+  100%{
+    transform: translateX(27vw);
   }
 }
 
@@ -182,6 +268,31 @@ button:hover {
     transform: translateX(0);
   }
 }
+
+@keyframes Back_enterToLeft{
+  0%{
+    transform: translateX(0);
+  }
+
+  100%{
+    transform: translateX(120vw);
+  }
+}
+
+@media screen and (max-width:700px){
+  body{
+    z-index: 123;
+  }
+}
+
+.NAOVEJA{
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  z-index: 100000000000000;
+}
+
+
 
 
 
